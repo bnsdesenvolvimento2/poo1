@@ -1,29 +1,48 @@
 ﻿using System;
 
-namespace ContaCorrente
+namespace Conta
 {
-    public class ContaCorrente
-    
+    public class Conta
     {
-        public int numero;
-        public string cliente;
-        public float saldo;
-
-        public void depositar(float valor)
-        {
-            saldo += valor;
-        }
-
-        public void sacar(float valor)
-        {
-            saldo -= valor;
-        }
+    		public string nome;
+    		public double valor;
+    		public string dataVencimento;
+    		public string dataPagamento;
+    		
+    		public Conta()
+    		{
+    			this.nome = "";
+    			this.valor = 0;
+    			this.dataVencimento = "";
+    			this.DataPagamento = "";
+    		}
+    		
+    		public Conta(string fnome, double fvalor)
+    		{
+    			this.nome = fnome;
+    			this.valor = fvalor;
+    		}
+    		
+    		public double RetornaSaldo()
+    		{
+    			return this.valor;
+    		}
+    		
+    		public string RetornaNome()
+    		{
+    			return this.nome;
+    		}
+    		
+    		public void DefineSaldo(double valor)
+    		{
+    			this.valor = valor;
+    		}
     }
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Diga o que você quer fazer");
+            Console.WriteLine("Hello World!");
         }
     }
 }
